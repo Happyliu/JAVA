@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>orderResult</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+
+		<script type="text/javascript">
+            var url = location.href;
+            
+            var username_tag = url.substr(0,url.indexOf("&orderid="));
+            //alert(username_tag);
+            var username = username_tag.substr(username_tag.indexOf("username=")+9,username_tag.length);
+            var orderid = url.substr(url.indexOf("&orderid=")+9,url.length);
+
+            //alert(username);
+            //alert(orderid);
+                      
+       $(document).ready(function() {
+            function jump(count) {
+                window.setTimeout(function(){
+                    count--;
+                    if(count > 0) {
+                        //$('#num').attr('innerHTML', count);
+                        jump(count);
+                    } else {
+                        location.href="index.jsp?username="+username;
+                    }
+                }, 1000);
+            }
+            jump(3);
+        });
+        
+        function init(){
+        
+             $("#msg").html("Dear"+username+"，you have ordered the car successful，Please your order ID is"+orderid);
+        }
+</script>
+	</head>
+
+	<body onload="init()">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h2 align="center" id="msg">
+			&nbsp;
+		</h2>
+		<div style="color: red; text-align: center; float: center;"
+			id="error_txt"></div>
+		<br>
+		<div align="center">
+			<a href="index.jsp"><font size="2px">If the page not jump auto please chick here!</font>
+			</a>
+		</div>
+
+	</body>
+</html>

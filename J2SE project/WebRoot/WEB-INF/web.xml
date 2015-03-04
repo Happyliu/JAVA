@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.suntaxi.util.Encoding</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<servlet>
+		<servlet-name>RegSev</servlet-name>
+		<servlet-class>org.suntaxi.web.RegSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegSev</servlet-name>
+		<url-pattern>/reg.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginSev</servlet-name>
+		<servlet-class>org.suntaxi.web.LoginSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginSev</servlet-name>
+		<url-pattern>/login.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>IndexSev</servlet-name>
+		<servlet-class>org.suntaxi.web.IndexSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexSev</servlet-name>
+		<url-pattern>/index.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>OrderSev</servlet-name>
+		<servlet-class>org.suntaxi.web.OrderSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderSev</servlet-name>
+		<url-pattern>/order.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindSev</servlet-name>
+		<servlet-class>org.suntaxi.web.FindSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindSev</servlet-name>
+		<url-pattern>/find.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DelOrder</servlet-name>
+		<servlet-class>org.suntaxi.web.DelOrder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelOrder</servlet-name>
+		<url-pattern>/del.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LocationaSev</servlet-name>
+		<servlet-class>org.suntaxi.web.LocationaSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LocationaSev</servlet-name>
+		<url-pattern>/location.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GoServlet</servlet-name>
+		<servlet-class>org.suntaxi.web.GoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GoServlet</servlet-name>
+		<url-pattern>/go.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchSev</servlet-name>
+		<servlet-class>org.suntaxi.web.SearchSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchSev</servlet-name>
+		<url-pattern>/search.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CurrentSev</servlet-name>
+		<servlet-class>org.suntaxi.web.CurrentSev</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CurrentSev</servlet-name>
+		<url-pattern>/current.do</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

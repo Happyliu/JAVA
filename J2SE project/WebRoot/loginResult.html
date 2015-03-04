@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>regResult</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+
+		<script type="text/javascript">
+
+            var url = location.href;
+            var tag_temp = url.substr(0,url.indexOf("&username="));
+            var tag = tag_temp.substr(tag_temp.length-1,tag_temp.length);
+            
+            var username = url.substr(url.indexOf("username=")+9,url.length);
+       $(document).ready(function() {
+       
+            
+            //alert(username);
+            if(tag=="1"){
+                             $("#msg").html("Log in successful!");
+                             $("#realurl").attr("href","index.do?username="+username);
+                        }else{
+                             $("#msg").html("Fail to log in!");
+                             $("#realurl").attr("href","login.html");
+                        }
+            function jump(count) {
+                window.setTimeout(function(){
+                    count--;
+                    if(count > 0) {
+                        //$('#num').attr('innerHTML', count);                    
+                        jump(count);
+                    } else {
+                        if(tag=="1"){
+                             location.href="index.do?username="+username;
+                        }else{
+                             location.href="login.html";
+                        }
+                        
+                    }
+                }, 1000);
+            }
+            jump(3);
+        });
+</script>
+	</head>
+
+	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h2  id="msg"  align="center">
+			&nbsp;
+		</h2>
+		<div style="color: red; text-align: center; float: center;"
+			id="error_txt"></div>
+		<br>
+		<div align="center">
+			<a href="" id="realurl"><font size="2px">If the page not jump auto please chick here!</font>
+			</a>
+		</div>
+
+	</body>
+</html>

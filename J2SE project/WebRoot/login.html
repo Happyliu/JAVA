@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>login</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script> 
+<script type="text/javascript">
+function login(){
+   //alert(0);
+   var username = $("#username").val();
+   var pwd = $("#pwd").val();
+   if(username.trim().length==0||username.length>8){
+          $("#error_txt").html("you should type your username and the number of user name could not large than 8 characters!!");
+          return;
+      }
+   if(pwd.trim().length==0){
+          $("#error_txt").html("you should type your password!!");
+          return;
+      }
+   window.location.href="login.do?username="+username+"&pwd="+pwd;
+
+}
+function quit(){
+    window.location.href = "index.jsp";
+}
+</script> 
+  </head>
+  
+  <body>
+     <br><br><br><br><br>
+     <h2 align="center">Sun taxi log in</h2>
+     <div style="color:red;text-align:center; float:center;" id="error_txt"></div><br>
+     <div align="center">
+     Username：<input type="text" id="username"><br><br>
+     Password：<input type="password" id="pwd"><br><br>
+     <input type="button" value="login" onclick="login()" style="padding: 2 4 0 4;font-size:12px;height:23;background-color:#20c020;border-width:2;"/>&nbsp;&nbsp;
+     <input type="button" value="cancel" onclick="quit()" style="padding: 2 4 0 4;font-size:12px;height:23;background-color:#20c020;border-width:2;"/>&nbsp;&nbsp;<a href="reg.html"><font size="2px">Have no account？register</font></a>
+     </div>
+
+  </body>
+</html>
